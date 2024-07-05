@@ -1,0 +1,17 @@
+{
+  "experimentalFeaturesEnabled": {
+    "symbolicNameCodegen": true
+  },
+  "analyzers": {
+    "core": {
+      "rules": {
+        "no-deployments-resources": {
+          "level": "off" // Reason: The telemetry resource only has a single output and is self-contained in a deployment
+        },
+        "no-hardcoded-env-urls": {
+          "level": "off" // Reason: This utility module is meant to replicate the functionality provided by the environment() function
+        }
+      }
+    }
+  }
+}

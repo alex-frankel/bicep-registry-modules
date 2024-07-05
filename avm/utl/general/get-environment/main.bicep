@@ -1,8 +1,10 @@
 type environmentType = 'AzureCloud' | 'AzureChinaCloud' | 'AzureUSGovernment'
 
+param foo string
+
 @export()
 @description('Get the graph endpoint for the given environment')
-func getGraphEndpoint(environment environmentType | string) string =>
+func getGraphEndpoint(environment environmentType) string =>
   {
     AzureCloud: 'https://graph.windows.net'
     AzureChinaCloud: 'https://graph.chinacloudapi.cn'
@@ -11,7 +13,7 @@ func getGraphEndpoint(environment environmentType | string) string =>
 
 @export()
 @description('Get the Portal URL for the given environment')
-func getPortalUrl(environment environmentType | string) string =>
+func getPortalUrl(environment environmentType) string =>
   {
     AzureCloud: 'https://portal.azure.com'
     AzureChinaCloud: 'https://portal.azure.cn'
