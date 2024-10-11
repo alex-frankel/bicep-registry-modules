@@ -1,5 +1,7 @@
 targetScope = 'subscription'
 
+metadata description = 'This instance deploys the module waf-aligned.'
+
 // ========== //
 // Parameters //
 // ========== //
