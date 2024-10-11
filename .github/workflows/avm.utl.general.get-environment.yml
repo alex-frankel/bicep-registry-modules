@@ -36,7 +36,7 @@ on:
       - "!*/**/README.md"
 
 env:
-  modulePath: "avm/utl/general/get-enivornment"
+  modulePath: "avm/utl/general/get-environment"
   workflowPath: ".github/workflows/avm.utl.general.get-environment.yml"
 
 concurrency:
