@@ -6,8 +6,11 @@
     "_generator": {
       "name": "bicep",
       "version": "0.30.23.60470",
-      "templateHash": "6810928211695267589"
-    }
+      "templateHash": "252600541939170474"
+    },
+    "name": "Get Environment",
+    "description": "This module contains helper functions for returing URLs and Endpoints that change depending on the target cloud environment",
+    "owner": "alex-frankel"
   },
   "definitions": {
     "environmentType": {
