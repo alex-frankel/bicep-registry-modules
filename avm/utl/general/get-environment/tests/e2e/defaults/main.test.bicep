@@ -1,5 +1,6 @@
 targetScope = 'subscription'
 
+metadata name = 'min test'
 metadata description = 'This instance deploys the module with min features enabled.'
 
 // ========== //

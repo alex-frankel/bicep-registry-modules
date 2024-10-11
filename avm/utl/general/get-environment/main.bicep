@@ -1,3 +1,7 @@
+metadata name = 'Get Environment'
+metadata description = 'This module contains helper functions for returing URLs and Endpoints that change depending on the target cloud environment'
+metadata owner = 'alex-frankel'
+
 type environmentType = 'AzureCloud' | 'AzureChinaCloud' | 'AzureUSGovernment'
 
 @export()
