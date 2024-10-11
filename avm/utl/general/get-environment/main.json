@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "languageVersion": "2.0",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.30.23.60470",
+      "templateHash": "6810928211695267589"
+    }
+  },
+  "definitions": {
+    "environmentType": {
+      "type": "string",
+      "allowedValues": [
+        "AzureChinaCloud",
+        "AzureCloud",
+        "AzureUSGovernment"
+      ]
+    }
+  },
+  "functions": [
+    {
+      "namespace": "__bicep",
+      "members": {
+        "getGraphEndpoint": {
+          "parameters": [
+            {
+              "$ref": "#/definitions/environmentType",
+              "name": "environment"
+            }
+          ],
+          "output": {
+            "type": "string",
+            "value": "[createObject('AzureCloud', 'https://graph.windows.net', 'AzureChinaCloud', 'https://graph.chinacloudapi.cn', 'AzureUSGovernment', 'https://graph.windows.net')[parameters('environment')]]"
+          },
+          "metadata": {
+            "description": "Get the graph endpoint for the given environment",
+            "__bicep_export!": true
+          }
+        },
+        "getPortalUrl": {
+          "parameters": [
+            {
+              "$ref": "#/definitions/environmentType",
+              "name": "environment"
+            }
+          ],
+          "output": {
+            "type": "string",
+            "value": "[createObject('AzureCloud', 'https://portal.azure.com', 'AzureChinaCloud', 'https://portal.azure.cn', 'AzureUSGovernment', 'https://portal.azure.us')[parameters('environment')]]"
+          },
+          "metadata": {
+            "description": "Get the Portal URL for the given environment",
+            "__bicep_export!": true
+          }
+        }
+      }
+    }
+  ],
+  "resources": {}
+}
