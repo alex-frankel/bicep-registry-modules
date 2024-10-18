@@ -22,10 +22,9 @@ The following section provides usage examples for the module, which were used to
 
 >**Note**: To reference the module, please use the following syntax `br/public:avm/utl/general/get-environment:<version>`.
 
-- [min test](#example-1-min-test)
-- [min test](#example-2-min-test)
+- [Import all](#example-1-import-all)
 
-### Example 1: _min test_
+### Example 1: _Import all_
 
 This instance deploys the module with min features enabled.
 
@@ -35,89 +34,12 @@ This instance deploys the module with min features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-module getEnvironment 'br/public:avm/utl/general/get-environment:<version>' = {
-  name: 'getEnvironmentDeployment'
-  params: {
+import * as environment from 'br/public:avm/utl/general/get-environment:<version>'
 
-  }
-}
-```
+var currentEnvironment = 'AzureCloud'
 
-</details>
-<p>
-
-<details>
-
-<summary>via JSON parameters file</summary>
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {}
-}
-```
-
-</details>
-<p>
-
-<details>
-
-<summary>via Bicep parameters file</summary>
-
-```bicep-params
-using 'br/public:avm/utl/general/get-environment:<version>'
-
-
-```
-
-</details>
-<p>
-
-### Example 2: _min test_
-
-This instance deploys the module waf-aligned.
-
-
-<details>
-
-<summary>via Bicep module</summary>
-
-```bicep
-module getEnvironment 'br/public:avm/utl/general/get-environment:<version>' = {
-  name: 'getEnvironmentDeployment'
-  params: {
-
-  }
-}
-```
-
-</details>
-<p>
-
-<details>
-
-<summary>via JSON parameters file</summary>
-
-```json
-{
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {}
-}
-```
-
-</details>
-<p>
-
-<details>
-
-<summary>via Bicep parameters file</summary>
-
-```bicep-params
-using 'br/public:avm/utl/general/get-environment:<version>'
-
-
+var graphEndpoint = environment.getGraphEndpoint(currentEnvironment)
+var portalUrl = environment.getPortalUrl(currentEnvironment)
 ```
 
 </details>
