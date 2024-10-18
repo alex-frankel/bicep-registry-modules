@@ -37,22 +37,18 @@ resource resourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 // Test Execution //
 // ============== //
 
+// TODO: this module test is not relevant for a utility module that is only used
+// for importing symbols, but there is a PSRule test that checks for the existence of
+// a module like this in the test
 @batchSize(1)
 module testDeployment '../../../main.bicep' = [
   for iteration in ['init', 'idem']: {
     scope: resourceGroup
     name: '${uniqueString(deployment().name, resourceLocation)}-test-${serviceShort}-${iteration}'
-    params: {
-      // You parameters go here
-      // name: '${namePrefix}${serviceShort}001'
-      // location: resourceLocation
-    }
+    params: {}
   }
 ]
 
 import * as environment from '../../../main.bicep'
-
 var cloud = 'AzureCloud'
-
-// assert myAssert = environment.getGraphEndpoint(cloud) == 'https://graph.windows.net'
-output thingFromEnvironment string = environment.getGraphEndpoint(cloud)
+output thingFromEnvironment bool = environment.getGraphEndpoint(cloud) == 'https://graph.windows.net'
