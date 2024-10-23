@@ -206,8 +206,8 @@ body:
         - "avm/res/web/serverfarm"
         - "avm/res/web/site"
         - "avm/res/web/static-site"
-        - "avm/utl/types/avm-common-types"
         - "avm/utl/general/get-environment"
+        - "avm/utl/types/avm-common-types"
     validations:
       required: true
   - type: input
