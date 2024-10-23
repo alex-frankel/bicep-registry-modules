@@ -1,7 +1,7 @@
 targetScope = 'subscription'
 
-metadata name = 'min test'
-metadata description = 'This instance deploys the module with min features enabled.'
+metadata name = 'Import all'
+metadata description = 'This example imports all functions.'
 
 // ============== //
 // Test Execution //

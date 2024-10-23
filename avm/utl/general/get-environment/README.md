@@ -26,7 +26,7 @@ The following section provides usage examples for the module, which were used to
 
 ### Example 1: _Import all_
 
-This instance deploys the module with min features enabled.
+This example imports all functions.
 
 
 <details>
@@ -34,12 +34,28 @@ This instance deploys the module with min features enabled.
 <summary>via Bicep module</summary>
 
 ```bicep
-import * as environment from 'br/public:avm/utl/general/get-environment:<version>'
+targetScope = 'subscription'
 
-var currentEnvironment = 'AzureCloud'
+metadata name = 'Import all'
+metadata description = 'This example imports all functions.'
 
-var graphEndpoint = environment.getGraphEndpoint(currentEnvironment)
-var portalUrl = environment.getPortalUrl(currentEnvironment)
+// ============== //
+// Test Execution //
+// ============== //
+
+import * as environment from '../../../main.bicep'
+
+var public = 'AzureCloud'
+var china = 'AzureChinaCloud'
+var usgov = 'AzureUSGovernment'
+
+output graphEndpointPublic string = environment.getGraphEndpoint(public)
+output graphEndpointChina string = environment.getGraphEndpoint(china)
+output graphEndpointUsGov string = environment.getGraphEndpoint(usgov)
+
+output portalEndpointPublic string = environment.getPortalUrl(public)
+output portalEndpointChina string = environment.getPortalUrl(china)
+output portalEndpointUsGov string = environment.getPortalUrl(usgov)
 ```
 
 </details>
